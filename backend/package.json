@@ -16,7 +16,8 @@
     "dotenv": "^17.4.0",
     "express": "^5.2.1",
     "morgan": "^1.10.1",
-    "pg": "^8.20.0"
+    "pg": "^8.20.0",
+    "portfolio-project": "file:.."
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
