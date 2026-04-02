@@ -4,8 +4,9 @@
   "description": "Portfolio backend (Express + PostgreSQL)",
   "main": "src/index.js",
   "scripts": {
+    "build": "cd ../frontend && npm install && npm run build",
     "dev": "nodemon src/index.js",
-    "db:setup": "node scripts/dbSetup.js",
+    "db:setup": "node setupDb.js",
     "start": "node src/index.js"
   },
   "license": "ISC",

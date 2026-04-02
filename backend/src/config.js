@@ -14,7 +14,7 @@ function requireEnv(name) {
 
 // Only require variables that are needed for the backend to function.
 // In production, the frontend is served by Express from the same origin, so CORS is optional.
-const requiredEnv = ['DATABASE_URL', 'PORT', 'APP_SECRET'];
+const requiredEnv = ['DATABASE_URL', 'PORT', 'NODE_ENV'];
 for (const k of requiredEnv) requireEnv(k);
 
 const PORT_NUMBER = Number(process.env.PORT);
@@ -26,8 +26,8 @@ module.exports = {
   port: PORT_NUMBER,
   databaseUrl: process.env.DATABASE_URL,
   corsOrigin: process.env.CORS_ORIGIN || undefined,
-  appSecret: process.env.APP_SECRET,
+  appSecret: process.env.APP_SECRET || '',
   pgSslMode: process.env.PGSSLMODE || 'disable',
-  nodeEnv: process.env.NODE_ENV || 'development',
+  nodeEnv: process.env.NODE_ENV,
 };
 

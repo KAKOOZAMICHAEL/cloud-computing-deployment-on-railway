@@ -70,6 +70,12 @@ You can access:
 
 ## Deployment to Railway
 
+GitHub repository:
+- `https://github.com/KAKOOZAMICHAEL/cloud-computing-deployment-on-railway`
+
+Railway project:
+- `https://railway.com/project/135a19a8-19a7-44fc-b17a-44aa10e91259`
+
 This deployment is configured to run the backend and serve the React production build using:
 - `Procfile` (starts the backend)
 - `nixpacks.toml` (installs deps for both apps and runs `frontend` build so `frontend/build` exists)
@@ -89,6 +95,7 @@ After deployment:
 - Express serves the built React app from `frontend/build`
 - The API is available under `/api`
 - Portfolio admin page is available at `/admin`
+- Railway auto-deploys via CI/CD whenever code is pushed to the `main` branch of `https://github.com/KAKOOZAMICHAEL/cloud-computing-deployment-on-railway`
 
 ### Connecting to Railway Postgres (psql + Railway CLI)
 
@@ -101,6 +108,18 @@ Do **not** commit database credentials into git. Store them in Railway environme
 ```sh
 railway connect Postgres
 ```
+
+### Create tables and seed data from backend script
+
+Run from the backend folder:
+
+```sh
+cd "backend"
+npm run db:setup
+```
+
+This runs `setupDb.js`, creates `skills` and `projects` tables (if missing), inserts sample data, and prints:
+`Tables created and data seeded successfully`.
 
 #### Option B: `psql` with environment variables (no secrets in shell history)
 
