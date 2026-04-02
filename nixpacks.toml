@@ -1,0 +1,18 @@
+[phases.setup]
+nixPkgs = ['nodejs_20']
+
+[phases.install]
+# Install dependencies for both apps.
+cmds = [
+  "npm --prefix frontend ci || npm --prefix frontend install",
+  "npm --prefix backend ci || npm --prefix backend install",
+]
+
+[phases.build]
+# Build the React app so Express can serve it from frontend/build/.
+cmds = [
+  "npm --prefix frontend run build",
+]
+
+[start]
+cmd = "npm --prefix backend run start"

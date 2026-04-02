@@ -1,0 +1,302 @@
+:root {
+  --bg: #0b1220;
+  --card: #0f1b31;
+  --text: #e8eefc;
+  --muted: #a9b7dd;
+  --primary: #5b8cff;
+  --danger: #ff5b6b;
+  --border: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(91, 140, 255, 0.18), transparent),
+    radial-gradient(1000px 600px at 85% 10%, rgba(255, 91, 107, 0.12), transparent), var(--bg);
+  color: var(--text);
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.hero {
+  padding: 36px 16px 14px;
+}
+
+.heroInner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.heroInner h1 {
+  margin: 0 0 8px;
+  font-size: 36px;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 16px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.section {
+  background: rgba(15, 27, 49, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  backdrop-filter: blur(8px);
+}
+
+.sectionTitle {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.sectionBody {
+  color: var(--text);
+}
+
+.status {
+  max-width: 1100px;
+  margin: 16px auto 0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(15, 27, 49, 0.75);
+}
+
+.statusError {
+  border-color: rgba(255, 91, 107, 0.5);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  border: 1px solid var(--border);
+  background: rgba(11, 18, 32, 0.6);
+  border-radius: 999px;
+  padding: 10px 12px;
+}
+
+.chipName {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.chipLevel {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.aboutHeadline {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: var(--primary);
+}
+
+.aboutText {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.contactLine {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.contactLine:last-child {
+  border-bottom: none;
+}
+
+.contactLabel {
+  width: 110px;
+  color: var(--muted);
+  flex: 0 0 auto;
+}
+
+.contactValue {
+  flex: 1 1 auto;
+}
+
+.link {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.projectsLayout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .projectsLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.projectCard {
+  border: 1px solid var(--border);
+  background: rgba(11, 18, 32, 0.55);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.projectTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.projectName {
+  margin: 0;
+  font-size: 16px;
+}
+
+.projectActions {
+  display: flex;
+  gap: 8px;
+}
+
+.projectDesc {
+  margin: 10px 0 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.techRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techBadge {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(15, 27, 49, 0.5);
+  color: var(--text);
+}
+
+.projectsForm {
+  border: 1px solid var(--border);
+  background: rgba(11, 18, 32, 0.55);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.formTitle {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: var(--primary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+input,
+textarea {
+  background: rgba(15, 27, 49, 0.7);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.formButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: rgba(15, 27, 49, 0.6);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btnPrimary {
+  background: rgba(91, 140, 255, 0.25);
+  border-color: rgba(91, 140, 255, 0.45);
+}
+
+.btnSecondary {
+  background: rgba(169, 183, 221, 0.12);
+}
+
+.btnDanger {
+  background: rgba(255, 91, 107, 0.15);
+  border-color: rgba(255, 91, 107, 0.45);
+}
+

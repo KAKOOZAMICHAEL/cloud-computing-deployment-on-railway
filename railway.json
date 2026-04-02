@@ -1,0 +1,10 @@
+{
+  "$schema": "https://railway.com/railway.schema.json",
+  "build": {
+    "buildCommand": null
+  },
+  "deploy": {
+    "startCommand": "npm --prefix backend run start"
+  }
+}
+
