@@ -1,1 +1,1 @@
-web: npm --prefix backend run start
+web: node backend/src/index.js
