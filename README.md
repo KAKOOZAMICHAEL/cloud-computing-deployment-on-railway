@@ -82,13 +82,54 @@ This deployment is configured to run the backend and serve the React production 
    - `DATABASE_URL` = Postgres connection string from Railway (required)
    - `PORT` = Railway sets this automatically, but it must be present for the backend to start (required)
    - `APP_SECRET` = any random string (required)
-   - `PGSSLMODE` = optional (set to `require` only if your Postgres requires SSL)
+   - `PGSSLMODE` = optional (Railway Postgres commonly needs SSL, set to `require` if needed)
 4. Deploy.
 
 After deployment:
 - Express serves the built React app from `frontend/build`
 - The API is available under `/api`
 - Portfolio admin page is available at `/admin`
+
+### Connecting to Railway Postgres (psql + Railway CLI)
+
+Do **not** commit database credentials into git. Store them in Railway environment variables.
+
+#### Option A: Railway CLI (recommended)
+1. Install and login to Railway CLI.
+2. Link the service repo (if needed), then run:
+
+```sh
+railway connect Postgres
+```
+
+#### Option B: `psql` with environment variables (no secrets in shell history)
+
+Set these from your Railway Postgres details:
+- `PGHOST` (example: `hopper.proxy.rlwy.net`)
+- `PGPORT` (example: `52325`)
+- `PGDATABASE` (example: `railway`)
+- `PGUSER` (example: `postgres`)
+- `PGPASSWORD` (your password)
+
+Then connect:
+
+```sh
+psql -h "$PGHOST" -U "$PGUSER" -p "$PGPORT" -d "$PGDATABASE"
+```
+
+If you prefer the one-liner style, use it only in a secure terminal session (it can leak into shell history):
+
+```sh
+PGPASSWORD="$PGPASSWORD" psql -h "$PGHOST" -U "$PGUSER" -p "$PGPORT" -d "$PGDATABASE"
+```
+
+#### `DATABASE_URL` format
+
+Railway provides a full connection string you can put into `DATABASE_URL`, for example:
+
+```text
+postgresql://USER:PASSWORD@HOST:PORT/DBNAME
+```
 
 ---
 
